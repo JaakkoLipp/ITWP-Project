@@ -7,7 +7,7 @@ A timer is added to provide the player incentive to move a bit faster and take m
 ### Links to hosted version and github repository
 
 
-[](https://itwp-project-jl.duckdns.org/)
+[https://itwp-project-jl.duckdns.org/](https://itwp-project-jl.duckdns.org/)
 
 [https://github.com/JaakkoLipp/ITWP-Project](https://github.com/JaakkoLipp/ITWP-Project)
 
