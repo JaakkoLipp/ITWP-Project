@@ -203,7 +203,8 @@ function create ()
 {
     // commented out on hosted version to prevent name saving
     // updateScoreboard();
-    // keypress conflict with spacebar and game
+
+    // keypress conflict with nameinput and game
     document.getElementById('playerName').addEventListener('keydown', function(event) {
         event.stopPropagation();
     });
