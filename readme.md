@@ -24,12 +24,8 @@ A timer is added to provide the player incentive to move a bit faster and take m
 - While NameInput is in use, game controls do not conflict. click outside the nameInput field to control the game.
 - Texture for enemies is from here [https://0x72.itch.io/dungeontileset-ii](https://0x72.itch.io/dungeontileset-ii?download)
 
-# Project Points
+# Proposed project Points
 
-
-**Feature**
-
-**Proposed points**
 
 | Game is hosted on a public web server, using nginx, and accessible with domain name URL and  | 5 |
 | --- | --- |
