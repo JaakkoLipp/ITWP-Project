@@ -111,28 +111,41 @@ function addScoreToScoreboard(score) {
     if (score === 0) {
         return;
     }
-
     var playerName = document.getElementById('playerName').value;
     if (!playerName) {
         playerName = 'Anonymous';
     }
-
-    var ol = document.querySelector('#scorediv #Scoreboard ol'); // Select the <ol> element within #Scoreboard
-    var li = document.createElement('li');
-    li.textContent = playerName + ': ' + score; // Set the list item's text to the player's name and score
-    ol.appendChild(li);
-
-    var listItems = Array.from(ol.children);
-    listItems.sort(function(a, b) {
-        return b.textContent.split(': ')[1] - a.textContent.split(': ')[1];
+    var newScoreEntry = { name: playerName, score: score };
+    // Load existing scores from localStorage, or initialize to an empty array if null
+    var scoresArray = JSON.parse(localStorage.getItem('scores')) || [];
+    // Add new score to scores array
+    scoresArray.push(newScoreEntry);
+    // Sort scores array by score in descending order
+    scoresArray.sort(function(a, b) {
+        return b.score - a.score;
     });
-    ol.innerHTML = '';
-    listItems.slice(0, 5).forEach(function(item) {
-        ol.appendChild(item);
+    // Save sorted scores array back to localStorage
+    localStorage.setItem('scores', JSON.stringify(scoresArray.slice(0, 5)));  // Keep only the top 5 scores
+    // Update the displayed scoreboard
+    updateScoreboard();
+}
+
+function updateScoreboard() {
+    var scoresArray = JSON.parse(localStorage.getItem('scores')) || [];
+    var ol = document.querySelector('#scorediv #Scoreboard ol');
+    ol.innerHTML = '';  // Clear existing list items
+    scoresArray.forEach(function(scoreEntry) {
+        var li = document.createElement('li');
+        li.textContent = scoreEntry.name + ': ' + scoreEntry.score;
+        ol.appendChild(li);
     });
 }
 
-
+// only to be called through console if need be
+function clearScoreboard() {
+    localStorage.removeItem('scores');
+    updateScoreboard();  // Update the displayed scoreboard
+}
 
 // Reset the game state on game end
 function resetGame() {
@@ -188,6 +201,7 @@ function bulletHitEnemy(bullet, enemy) {
 // Setup Phaser Scene
 function create ()
 {
+    updateScoreboard();
     // keypress conflict with spacebar and game
     document.getElementById('playerName').addEventListener('keydown', function(event) {
         event.stopPropagation();
