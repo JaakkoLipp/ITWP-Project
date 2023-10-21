@@ -178,7 +178,7 @@ function shootBullet() {
     let bullet = bullets.create(player.x, player.y, 'bullet');
     let pointer = this.input.activePointer;
     let angle = Phaser.Math.Angle.Between(player.x, player.y, pointer.x, pointer.y);
-    let velocity = this.physics.velocityFromAngle(Phaser.Math.RadToDeg(angle), 800);
+    let velocity = this.physics.velocityFromAngle(Phaser.Math.RadToDeg(angle), 600);
     bullet.setVelocity(velocity.x, velocity.y);
     this.time.delayedCall(2000, function() {
         bullet.destroy();
@@ -201,7 +201,8 @@ function bulletHitEnemy(bullet, enemy) {
 // Setup Phaser Scene
 function create ()
 {
-    updateScoreboard();
+    // commented out on hosted version to prevent name saving
+    // updateScoreboard();
     // keypress conflict with spacebar and game
     document.getElementById('playerName').addEventListener('keydown', function(event) {
         event.stopPropagation();
@@ -303,7 +304,7 @@ function create ()
 // mainly contains control checking
 function update ()
 {
-    // Check for input on arrow keys or on WASD keys
+    // Check for input on arrow keys
     if (cursors.left.isDown)
     {
         player.setVelocityX(-320);
