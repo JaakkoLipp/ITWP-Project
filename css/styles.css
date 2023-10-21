@@ -5,10 +5,12 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    color: #1e1f22;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 canvas{
+    margin-top: 32px;
     margin: 50px 50px;
     border: 2px solid gray;
 }
