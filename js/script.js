@@ -202,7 +202,7 @@ function bulletHitEnemy(bullet, enemy) {
 function create ()
 {
     // commented out on hosted version to prevent name saving
-    // updateScoreboard();
+    updateScoreboard();
 
     // keypress conflict with nameinput and game
     document.getElementById('playerName').addEventListener('keydown', function(event) {
