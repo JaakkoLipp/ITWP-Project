@@ -1,22 +1,17 @@
 # ITWP Project Report
 
----
-
 This project aims to build a fully functional platformer-type game in Phaser 3, where the main objective is to collect as much score as possible in the given time frame. Score can be acquired by shooting enemies and  The game features interactable enemies and two types of collectible stars, which have 2 different rarity tiers and give different score.
 
 A timer is added to provide the player incentive to move a bit faster and take more risks for a better score. The score is then displayed on a scoreboard below the game on the web page. More on features below and in pointsproposal.
 
 ### Links to hosted version and github repository
 
----
 
 [](https://itwp-project-jl.duckdns.org/)
 
 [https://github.com/JaakkoLipp/ITWP-Project](https://github.com/JaakkoLipp/ITWP-Project)
 
 # Highlighted Features, Notes & Instructions
-
----
 
 - Controls:
     - Move with arrow keys
@@ -31,7 +26,6 @@ A timer is added to provide the player incentive to move a bit faster and take m
 
 # Project Points
 
----
 
 **Feature**
 
